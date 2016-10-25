@@ -24,6 +24,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
 
     let emailAlertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .alert)
     
+    let incorrectController = UIAlertController(title: "Invalid Email or Password", message: "Please enter a valid Email and Password", preferredStyle: .alert)
     let signInController = UIAlertController(title:nil, message: "Signing In...", preferredStyle: .alert)
     
     let passwordAlertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .alert)
@@ -48,6 +49,7 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
         buttonInitialY = buttonParentView.frame.origin.y
         buttonOffset = -120
         emailAlertController.addAction(OKAction)
+        incorrectController.addAction(OKAction)
         passwordAlertController.addAction(OKAction)
 
     }
@@ -64,7 +66,12 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
     
     @IBAction func onLoginPressed(_ sender: UIButton) {
         activitySpinner.startAnimating()
-        if emailField.text == "sindu.ux@gmail.com" && passwordField.text == "password" {
+        if (emailField.text?.isEmpty)!{
+            activitySpinner.stopAnimating()
+            present(emailAlertController, animated: true) {
+            }
+        }
+        else if emailField.text == "sindu.ux@gmail.com" && passwordField.text == "password" {
             present(signInController, animated: true) {
             }
             delay(3, closure: { () -> () in
@@ -75,14 +82,17 @@ class LoginViewController: UIViewController,UIScrollViewDelegate {
                 self.performSegue(withIdentifier: "pagingSegue", sender: nil)
 
             })
-        }
-        else if (emailField.text?.isEmpty)!{
+        } else {
             activitySpinner.stopAnimating()
-            present(emailAlertController, animated: true) {
+            present(incorrectController, animated: true) {
             }
         }
-    
     }
+    
+    @IBAction func onBackPressed(_ sender: UIButton) {
+        
+    }
+    
         
 
     

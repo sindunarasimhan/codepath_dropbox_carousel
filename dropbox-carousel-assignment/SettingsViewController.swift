@@ -13,9 +13,36 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var settingsImage: UIImageView!
     
+    let alertController = UIAlertController(title:nil, message: "Are you sure you want to logout?", preferredStyle: .actionSheet)
+    
+    let logoutAction = UIAlertAction(title: "Log Out", style: .destructive) { (action) in
+        let introVC = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "introVC") as UIViewController
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegate.window?.rootViewController = introVC
+        let initialViewController = UIStoryboard(name: "Main", bundle:nil).instantiateInitialViewController()! as UIViewController
+        let appDelegated = (UIApplication.shared.delegate as! AppDelegate)
+        appDelegated.window?.rootViewController = initialViewController
+    }
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        // handle case of user canceling. Doing nothing will dismiss the view.
+    }
+
+    override func viewDidAppear(_ _animated: Bool) {
+        super.viewDidAppear(true)
+        scrollView.contentSize = CGSize(width:375, height:830)
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancelAction)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = CGSize(width:375, height:830)
+    }
+    @IBAction func onSignOutPressed(_ sender: UIButton) {
+        present(alertController, animated: true) {
+
+
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,12 +51,6 @@ class SettingsViewController: UIViewController {
     }
     
 
-    @IBAction func onSignOutButtonPressed(_ sender: UIButton) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let introVC = mainStoryboard.instantiateViewController(withIdentifier: "introVC") as! MainViewController
-        present(introVC, animated: true, completion: nil)
-
-    }
     
     @IBAction func oncloseButtonPressed(_ sender: UIButton) {
         
