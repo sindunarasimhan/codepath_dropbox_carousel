@@ -8,12 +8,48 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,UIScrollViewDelegate {
+
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    var buttonInitialY: CGFloat!
+    var buttonOffset: CGFloat!
+    @IBOutlet weak var buttonParentView: UIView!
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
+
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+
+    let emailAlertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .alert)
+    
+    let signInController = UIAlertController(title:nil, message: "Signing In...", preferredStyle: .alert)
+    
+    let passwordAlertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .alert)
+    
+    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        // handle response here.
+    }
+    // add the OK action to the alert controller
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentSize = scrollView.frame.size
+        scrollView.delegate = self
 
-        // Do any additional setup after loading the view.
+        scrollView.contentInset.bottom = 100
+        
+        buttonInitialY = buttonParentView.frame.origin.y
+        buttonOffset = -120
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        buttonInitialY = buttonParentView.frame.origin.y
+        buttonOffset = -120
+        emailAlertController.addAction(OKAction)
+        passwordAlertController.addAction(OKAction)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +57,35 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func keyboardWillShow(notification: NSNotification) {
+        buttonParentView.frame.origin.y = buttonInitialY + buttonOffset
+        scrollView.contentOffset.y = scrollView.contentInset.bottom
     }
-    */
+    
+    @IBAction func onLoginPressed(_ sender: UIButton) {
+        activitySpinner.startAnimating()
+        if emailField.text == "sindu.ux@gmail.com" && passwordField.text == "password" {
+            present(signInController, animated: true) {
+            }
+            delay(3, closure: { () -> () in
+                self.signInController.dismiss(animated:false, completion: {
+                    }
+                )
+                self.activitySpinner.stopAnimating()
+                self.performSegue(withIdentifier: "pagingSegue", sender: nil)
+
+            })
+        }
+        else if (emailField.text?.isEmpty)!{
+            activitySpinner.stopAnimating()
+            present(emailAlertController, animated: true) {
+            }
+        }
+    
+    }
+        
+
+    
+
 
 }

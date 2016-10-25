@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		D4DE9A161DBD11D700775989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A151DBD11D700775989 /* AppDelegate.swift */; };
-		D4DE9A181DBD11D700775989 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A171DBD11D700775989 /* ViewController.swift */; };
-		D4DE9A1B1DBD11D700775989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4DE9A191DBD11D700775989 /* Main.storyboard */; };
 		D4DE9A1D1DBD11D700775989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DE9A1C1DBD11D700775989 /* Assets.xcassets */; };
 		D4DE9A201DBD11D700775989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4DE9A1E1DBD11D700775989 /* LaunchScreen.storyboard */; };
 		D4DE9A2B1DBD11D800775989 /* dropbox_carousel_assignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A2A1DBD11D800775989 /* dropbox_carousel_assignmentTests.swift */; };
 		D4DE9A361DBD11D800775989 /* dropbox_carousel_assignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A351DBD11D800775989 /* dropbox_carousel_assignmentUITests.swift */; };
+		D4DE9A441DBD129E00775989 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A431DBD129E00775989 /* Common.swift */; };
+		D4DE9A481DBDE44400775989 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A471DBDE44400775989 /* MainViewController.swift */; };
+		D4DE9A4A1DBE0EC100775989 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A491DBE0EC100775989 /* LoginViewController.swift */; };
+		D4DE9A521DBEFC5B00775989 /* PaginationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A511DBEFC5B00775989 /* PaginationViewController.swift */; };
+		D4DE9A541DBF09BB00775989 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A531DBF09BB00775989 /* CarouselViewController.swift */; };
+		D4DE9A561DBF0EEA00775989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4DE9A551DBF0EEA00775989 /* Main.storyboard */; };
+		D4DE9A581DBF0FEF00775989 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A571DBF0FEF00775989 /* SettingsViewController.swift */; };
+		D4DE9A5A1DBF143200775989 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9A591DBF143200775989 /* ConversationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +42,6 @@
 /* Begin PBXFileReference section */
 		D4DE9A121DBD11D700775989 /* dropbox-carousel-assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dropbox-carousel-assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DE9A151DBD11D700775989 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4DE9A171DBD11D700775989 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D4DE9A1A1DBD11D700775989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4DE9A1C1DBD11D700775989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4DE9A1F1DBD11D700775989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4DE9A211DBD11D700775989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		D4DE9A311DBD11D800775989 /* dropbox-carousel-assignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dropbox-carousel-assignmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DE9A351DBD11D800775989 /* dropbox_carousel_assignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropbox_carousel_assignmentUITests.swift; sourceTree = "<group>"; };
 		D4DE9A371DBD11D800775989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4DE9A431DBD129E00775989 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = ../../../../Downloads/Common.swift; sourceTree = "<group>"; };
+		D4DE9A471DBDE44400775989 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
+		D4DE9A491DBE0EC100775989 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D4DE9A511DBEFC5B00775989 /* PaginationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationViewController.swift; sourceTree = "<group>"; };
+		D4DE9A531DBF09BB00775989 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		D4DE9A551DBF0EEA00775989 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		D4DE9A571DBF0FEF00775989 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D4DE9A591DBF143200775989 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +109,15 @@
 		D4DE9A141DBD11D700775989 /* dropbox-carousel-assignment */ = {
 			isa = PBXGroup;
 			children = (
+				D4DE9A471DBDE44400775989 /* MainViewController.swift */,
+				D4DE9A431DBD129E00775989 /* Common.swift */,
 				D4DE9A151DBD11D700775989 /* AppDelegate.swift */,
-				D4DE9A171DBD11D700775989 /* ViewController.swift */,
-				D4DE9A191DBD11D700775989 /* Main.storyboard */,
+				D4DE9A551DBF0EEA00775989 /* Main.storyboard */,
+				D4DE9A591DBF143200775989 /* ConversationViewController.swift */,
+				D4DE9A571DBF0FEF00775989 /* SettingsViewController.swift */,
+				D4DE9A531DBF09BB00775989 /* CarouselViewController.swift */,
+				D4DE9A511DBEFC5B00775989 /* PaginationViewController.swift */,
+				D4DE9A491DBE0EC100775989 /* LoginViewController.swift */,
 				D4DE9A1C1DBD11D700775989 /* Assets.xcassets */,
 				D4DE9A1E1DBD11D700775989 /* LaunchScreen.storyboard */,
 				D4DE9A211DBD11D700775989 /* Info.plist */,
@@ -232,9 +250,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DE9A561DBF0EEA00775989 /* Main.storyboard in Resources */,
 				D4DE9A201DBD11D700775989 /* LaunchScreen.storyboard in Resources */,
 				D4DE9A1D1DBD11D700775989 /* Assets.xcassets in Resources */,
-				D4DE9A1B1DBD11D700775989 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4DE9A181DBD11D700775989 /* ViewController.swift in Sources */,
+				D4DE9A4A1DBE0EC100775989 /* LoginViewController.swift in Sources */,
+				D4DE9A481DBDE44400775989 /* MainViewController.swift in Sources */,
+				D4DE9A5A1DBF143200775989 /* ConversationViewController.swift in Sources */,
+				D4DE9A581DBF0FEF00775989 /* SettingsViewController.swift in Sources */,
+				D4DE9A441DBD129E00775989 /* Common.swift in Sources */,
+				D4DE9A521DBEFC5B00775989 /* PaginationViewController.swift in Sources */,
+				D4DE9A541DBF09BB00775989 /* CarouselViewController.swift in Sources */,
 				D4DE9A161DBD11D700775989 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +320,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D4DE9A191DBD11D700775989 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4DE9A1A1DBD11D700775989 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D4DE9A1E1DBD11D700775989 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

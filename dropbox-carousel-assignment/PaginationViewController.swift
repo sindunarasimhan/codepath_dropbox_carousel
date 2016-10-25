@@ -8,28 +8,52 @@
 
 import UIKit
 
-class PaginationViewController: UIViewController {
+class PaginationViewController: UIViewController,UIScrollViewDelegate{
+    
+    @IBOutlet weak var button: UIView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet var scrollView: UIScrollView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentSize = CGSize(width: 1510, height: 580)
+        scrollView.delegate = self
+        pageControl.numberOfPages = 4        
+        button.alpha = 0
 
-        // Do any additional setup after loading the view.
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+ 
+        let page : Int = Int(round(scrollView.contentOffset.x / 320))
+        pageControl.currentPage = page
+        if page == 4 {
+            UIView.animate(withDuration: 0.3) { () -> Void in
+                self.pageControl.isHidden = true
+                self.button.alpha = 1
+            }
+
+        } else {
+            UIView.animate(withDuration: 0.3) { () -> Void in
+                self.pageControl.isHidden = false
+                self.button.alpha = 0
+            }
+            
+        }
+        
+    }
+    
+    @IBAction func onBackUpActionPressed(_ sender: UIButton) {
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
+    

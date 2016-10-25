@@ -10,8 +10,13 @@ import UIKit
 
 class CarouselViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var feed: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentSize = feed.frame.size
 
         // Do any additional setup after loading the view.
     }

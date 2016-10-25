@@ -10,10 +10,12 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var settingsImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        scrollView.contentSize = CGSize(width:375, height:830)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +24,18 @@ class SettingsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBAction func onSignOutButtonPressed(_ sender: UIButton) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let introVC = mainStoryboard.instantiateViewController(withIdentifier: "introVC") as! MainViewController
+        present(introVC, animated: true, completion: nil)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    @IBAction func oncloseButtonPressed(_ sender: UIButton) {
+        
+        dismiss(animated: false, completion: nil)
+
+    }
+    
 
 }

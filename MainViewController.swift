@@ -10,10 +10,14 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet var introScrollView: UIScrollView!
+    @IBOutlet weak var introImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        introScrollView.contentSize = introImage.frame.size
+        
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +26,6 @@ class MainViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
