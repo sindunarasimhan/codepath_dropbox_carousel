@@ -10,6 +10,7 @@ Completed user stories:
 4. Image Timeline
 5. Conversations
 6. Settings
+7. Sign out alert view and functionality
 
 
 Walkthrough of all implemented user stories:
