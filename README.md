@@ -13,3 +13,4 @@ Completed user stories:
 
 
 Walkthrough of all implemented user stories:
+https://github.com/sindunarasimhan/codepath_dropbox_carousel/blob/master/dropbox_carousel.gif
